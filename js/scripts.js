@@ -99,8 +99,8 @@ const winChipsSound = new Audio("sounds/win-chips.mp3");
 const ambientSound = new Audio("sounds/ambient-sounds.mp3");
 const backgroundMusic = new Audio("sounds/background-music.mp3");
 
-var playAudio = true;
-var userInteraction = false;
+var playAudio = false;
+var userInteraction = true;
 
 $(".website-wrapper").click(function () {
   userInteraction = true;
@@ -110,7 +110,7 @@ $(".website-wrapper").click(function () {
   }
 });
 
-ambientSound.loop = true;
+ambientSound.loop = false;
 backgroundMusic.loop = true;
 
 const classColorName = (functionType) => {
@@ -410,13 +410,17 @@ var winAmountOnScreen;
 //Play button start
 $(".button-spin").click(function () {
   win = false;
+  if (betSum == 0)
+    $('.number0').click();
 
-  if (betSum == 0) {
-    $(".alert-bets").addClass("alert-message-visible");
+  if (betSum < 0) {
+    // $(".alert-bets").addClass("alert-message-visible");
+    $('.number0').click();
   } else {
-    if (playAudio) {
-      ballSpinSound.play();
-    }
+    ballSpinSound.play();
+    // if (playAudio) {
+    //   ballSpinSound.play();
+    // }
     winAmount = 0;
     winAmountOnScreen = 0;
     cashSumBefore = cashSum;
