@@ -8,14 +8,14 @@ const resizeWindow = () => {
 
     if (window.innerWidth > 414 && window.innerWidth <= 1024) {
       $(".betting-area")
-        .width(window.innerHeight - 250)//-208
-        .height((window.innerHeight - 230) * 0.45);//-192 * 0.45
+        .width(window.innerHeight - 208)//-208
+        .height((window.innerHeight - 192) * 0.45);//-192 * 0.45
     }
 
     if (window.innerWidth <= 414) {
       $(".betting-area")
-        .width(window.innerHeight - 230)
-        .height((window.innerHeight - 230) * 0.45);
+        .width(window.innerHeight - 192)
+        .height((window.innerHeight - 192) * 0.45);
     }
   };
 
