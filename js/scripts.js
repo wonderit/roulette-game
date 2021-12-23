@@ -20,11 +20,11 @@ const resizeWindow = () => {
   };
 
   if (window.innerWidth <= 1024) {
-    $(".website-wrapper").height(window.innerHeight - 230);
+    $(".website-wrapper").height(window.innerHeight);
   }
 
   window.addEventListener("resize", () => {
-    $(".website-wrapper").height(window.innerHeight - 230);
+    $(".website-wrapper").height(window.innerHeight);
     sizeGuidelines();
   });
 
